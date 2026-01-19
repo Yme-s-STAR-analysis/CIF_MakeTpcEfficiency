@@ -38,6 +38,12 @@ Date: 19.01.2026
 
     * `fmerge` is force mode. Use with caution: it may overwrite existing files
 
+6. In the end, run `root -l -b -q convert.cxx` to save histograms (instead of efficiency objects) into another root file.
+
+    * Note, you MUST merge the root files, and then convert!
+
+    * Change the file names and energy tag is all you need to do for the script.
+
 ## Änderungsprotokoll
 
 19.01.2026 v1 - Yige Huang
