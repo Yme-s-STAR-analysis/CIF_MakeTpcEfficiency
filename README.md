@@ -44,6 +44,8 @@ Date: 19.01.2026
 
     * Change the file names and energy tag is all you need to do for the script.
 
+    * You may need ROOT6.
+
 ## Änderungsprotokoll
 
 19.01.2026 v1 - Yige Huang
