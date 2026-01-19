@@ -59,21 +59,7 @@ StEmbeddingMaker::~StEmbeddingMaker() {}
 Int_t StEmbeddingMaker::Init() {
   	mFileOut = new TFile(mOutputName, "recreate");
 
-	// patch 3.0: 
-	// - 1) Add a flag 'match', 1 for RC matched, 0 for NOT matched
-	// -> thus, we don't need MC information:
-	// -> When a track is matched, we will use RC pt, y, eta...
-	// -> When a track is NOT matched, we will use MC pt, y, eta...
-	// -> And if it is NOT matched, the pt, y and eta of RC tracks would be ones from MC (indeed, there is no RC track for this case)
-	// - 2) Some quantities will not be used, like nHitsPoss, dedx, dcaxy/z
-	//	Previous quantities:
-    //	"cent:vz:"
-    //  "pTMc:etaMc:yMc:"
-    //  "pTRc:etaRc:yRc:"
-    // 	"nHitsFit:nHitsPoss:nHitsRatio:nHitsDedx:dedx:dca:dcaXY:dcaZ";
-
 	// initialize costume modules
-
 	mtDca = new BES2Processing::MeanDcaTool();
 	mtCent = new BES2Processing::CentCorrTool();
 	mtMult = new BES2Processing::StCFMult(energy == "27");
