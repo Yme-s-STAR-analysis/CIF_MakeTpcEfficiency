@@ -1,10 +1,10 @@
 # Get TPC Tracking Efficiency for CIF
 
-Version: 1.0
+Version: 1.1
 
 Author: yghuang
 
-Date: 19.01.2026
+Date: 01.04.2026
 
 ## Benutzung
 
@@ -46,7 +46,19 @@ Date: 19.01.2026
 
     * You may need ROOT6.
 
+7. Special Note for 9.2 GeV:
+
+    * In prepare and submit step: energy tag `9a` means 9.2 GeV region 1, and tag `9b` means 9.2 Gev region 2.
+
+    * In merge step: do this also for `9a` and `9b` separately.
+
+    * In convert step: make sure `9a` and `9b` are both done, and then convert them (and auto merge) into one file.
+
 ## Änderungsprotokoll
+
+01.04.2026 v1 - Yige Huang
+
+* Update 2-region version for 9.2 GeV
 
 19.01.2026 v1 - Yige Huang
 
