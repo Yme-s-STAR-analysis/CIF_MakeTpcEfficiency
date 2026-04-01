@@ -7,7 +7,7 @@ class StPicoEvent;
 class StTofMatchMaker;
 
 StChain *chain;
-void readPicoDst(const Char_t *inputFile = "file.list", TString JobIdName = "tpc", char *energy = "7", int ptype = 14)
+void readPicoDst(const Char_t *inputFile = "file.list", TString JobIdName = "tpc", char *energy_ = "7", int ptype = 14)
 {
     // ptype: 14 for proton and 15 for antiproton
     Int_t nEvents = 15000000;
@@ -30,8 +30,12 @@ void readPicoDst(const Char_t *inputFile = "file.list", TString JobIdName = "tpc
 
     TString Name = JobIdName;
     Name.Append(".root");
+    string energy = energy_;
+    if (energy == "9a" || energy == "9b") {
+        energy = "9";
+    }
     StPicoDstMaker *picoMaker = new StPicoDstMaker(2, inputFile, "picoDst");
-    StEmbeddingMaker *anaMaker = new StEmbeddingMaker("ana", picoMaker, Name, energy, ptype);
+    StEmbeddingMaker *anaMaker = new StEmbeddingMaker("ana", picoMaker, Name, energy.c_str(), ptype);
 
     chain->Init();
     cout << "chain->Init();" << endl;
