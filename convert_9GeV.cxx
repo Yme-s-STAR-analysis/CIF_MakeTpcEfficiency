@@ -21,7 +21,7 @@ struct SystematicCuts {
     double mass2High;
 };
 
-void convert() {
+void convert_9GeV() {
     // change those configuration in need
     const char* fNameIn1 = "9aGeV.hadd.root";
     const char* fNameIn2 = "9bGeV.hadd.root";
